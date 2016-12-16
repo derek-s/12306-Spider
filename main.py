@@ -18,5 +18,5 @@ from timetable import *
 
 if __name__ == "__main__":
     
-    #trainlistProcess()
-    timetable()
+    trainlistProcess()
+    #timetable()

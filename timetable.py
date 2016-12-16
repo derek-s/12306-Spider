@@ -28,7 +28,8 @@ def timetable():
     #获取表内第一行ID
     cursor.execute('select ID from TrainList limit 1')
     firstIDList = cursor.fetchall()
-    tableID = firstIDList[0][0]
+    #tableID = firstIDList[0][0]
+    tableID = 7541
     #获取表内所有ID
     cursor.execute('select ID from TrainList')
     allID = cursor.fetchall()
@@ -93,14 +94,6 @@ def timetable():
                 db.commit()
             else:
                 timetabledb(trainNoStr,trainNumInfo[2].decode('utf8'),trainNumInfo[3].decode('utf8'))
-                    
-
-
-
-
-
-
-
         tableID += 1
     print 'done' 
 
@@ -144,8 +137,8 @@ def timetabledb(No,station,tostation):
         cursor.execute('insert into Train(Code,Type,Station,S_No,A_Time,D_Time) values("%s","%s","%s","%s","%s","%s")' % ( dbCode,dbType,dbtoStation,dbStationOrder,dbA_Time,dbD_Time ))
         db.commit()
         i += 1
-    print '抓取完成，等待3s'
-    time.sleep(3)
+    #print '抓取完成，等待2s'
+    #time.sleep()
     
 
 if __name__ == '__main__':
